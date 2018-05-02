@@ -10,11 +10,10 @@
     'website': 'http://www.oejia.cn/',
     'depends': ['web'],
     'data': [
+        'views/base_views.xml',
+        'views/res_partner_views.xml',
     ],
-    'demo': [
-    ],
-    'test': [
-    ],
+    'qweb': ['static/src/xml/*.xml'],
     'application': True,
     'installable': True,
     'auto_install': False,
