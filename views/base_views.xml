@@ -3,7 +3,7 @@
 
         <menuitem
             id="cs_menu_root"
-            name="CRM"
+            name="呼叫中心"
             web_icon="crm,static/description/icon.png"
             groups="sales_team.group_sale_salesman,sales_team.group_sale_manager"
             sequence="6"/>
@@ -22,5 +22,7 @@
         <field name="tag">cs_base_dashboard</field>
     </record>
     <menuitem name="面板" id="cs_base_dashboard_menu" action="cs_base_dashboard_action" parent="cs_menu_root" sequence="-1"/>
+
+	<menuitem id="cs_config_menu" name="配置" parent="cs_menu_root" sequence="25"/>
 
 </odoo>
