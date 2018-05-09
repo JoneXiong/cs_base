@@ -2,26 +2,40 @@
 <templates>
     <t t-name="CsBaseDashboard"> 
         <div class="container-fluid o_web_settings_dashboard">
-            <div class="row">  
-                <div class="o_web_settings_dashboard_enterprise"/>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 o_web_settings_dashboard_col">
-                    <div class="text-center " style="background:#6bafbd; color:#fff">
-                        <i class="fa fa-check-square-o fa-3x"></i>
-                        <div class="o_web_settings_dashboard_header">11 已安装的应用</div>
-                    </div>
-                </div>         
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 o_web_settings_dashboard_col"> 
-                    <div class="text-center " style="background:#f3ce85;"></div>
-                </div>         
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 o_web_settings_dashboard_col">
-                    <div class="text-center " style="background:#65cea7;"></div>
-                </div>         
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 o_web_settings_dashboard_col">
-                    <div class="text-center " style="background:#fc8675;"></div>
-                </div>         
-            </div>             
+            <div class="row o_cs_base_dashboard_top" style="margin-top: 20px; border-bottom: 1px solid #c6c6c6;">
+                <div class="col-sm-6">
+                    <h5>欢迎使用！</h5>
+                </div>
+                <div class="col-sm-6">
+                    <a href="#" class="btn btn-sm btn-default pull-right"><i class="fa fa-refresh"></i> 刷新</a>
+                </div>
+            </div>
+            <div class="row o_cs_base_dashboard_agent">
+            </div>
+
         </div>
     </t>
 
+
+    <t t-name="DashboardAgent">
+        <div class="row o_cs_base_dashboard_agent">
+                <div class="col-sm-6 o_web_settings_dashboard_col">
+                    <div style="">
+                        <div class="">
+                            <b>当前坐席</b>：<t t-esc="widget.data.no"></t>
+                            <span class="pull-right"><i class="fa fa-phone"></i> <t t-esc="widget.data.mobile"></t></span>
+                            <!--<hr style="margin-top: 5px; margin-bottom: 5px;"/>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 o_web_settings_dashboard_col">
+                    <div class="">
+                        <div>
+                            <b>所在客服组</b>：<t t-esc="widget.data.groups"></t>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </t>
 
 </templates>
