@@ -11,7 +11,7 @@ class CsCroup(models.Model):
         ('normal', '正常'),
         ('disable', ' 停用'),
         ], string=' 状态', default='normal')
-    agent_ids = fields.Many2many('cs.agent', string='成员')
+    agent_ids = fields.Many2many('cs.agent', relation='cs_agent_group_rel', string='坐席成员')
 
 
 class Agent(models.Model):
@@ -20,6 +20,6 @@ class Agent(models.Model):
 
     no = fields.Char(string=u'坐席工号')
     user_id = fields.Many2one('res.users', string=u'坐席用户')
-    group_id = fields.Many2one('cs.group', string=u'所属客服组')
+    group_ids = fields.Many2many('cs.group', relation='cs_agent_group_rel', string=u'所属客服组')
     remark = fields.Text(string='备注')
 
