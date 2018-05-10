@@ -10,7 +10,7 @@
                        filter_domain="['|','|',('display_name','ilike',self),('ref','=',self),('email','ilike',self)]"/>
                    <filter name="filter_my_partners" help="我的客户"
                            domain="[('user_id','=',uid)]"/>
-                   <filter name="filter_public_partners" help="公海" domain="[]"/>
+                   <filter name="filter_public_partners" help="公海" domain="[('user_id','=',False)]"/>
                    <separator/>
                    <filter string="个人" name="type_person" domain="[('is_company','=',0)]"/>
                    <filter string="公司" name="type_company" domain="[('is_company','=',1)]"/>
@@ -35,7 +35,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="context">{"search_default_filter_my_partners":1}</field>
-            <field name="domain">[('customer','=',1)]</field>
+            <field name="domain">[('customer','=',1),'|',('user_id','=',uid),('user_id','=',False)]</field>
             <field name="search_view_id" ref="view_crm_partner_filter"/>
         </record>
 
