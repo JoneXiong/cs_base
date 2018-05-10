@@ -5,7 +5,7 @@ from odoo.exceptions import AccessError
 from odoo.http import request
 from odoo import release
 
-class WebSettingsDashboard(http.Controller):
+class CsBaseDashboard(http.Controller):
 
     @http.route('/cs_base_dashboard/data', type='json', auth='user')
     def cs_base_dashboard_data(self, **kw):
