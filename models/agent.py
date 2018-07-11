@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class CsCroup(models.Model):
     _name = 'cs.group'
     _description = u'客服组'
+    _rec_name = 'name'
 
     name = fields.Char(string='名称', required=True)
     state = fields.Selection([
@@ -17,6 +18,7 @@ class CsCroup(models.Model):
 class Agent(models.Model):
     _name = 'cs.agent'
     _description = u'客服坐席'
+    _rec_name = 'no'
 
     no = fields.Char(string=u'坐席工号')
     user_id = fields.Many2one('res.users', string=u'坐席用户')
