@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="cs_base_dashboard_action" model="ir.actions.client">
+        <field name="name">面板</field>
+        <field name="tag">cs_base_dashboard</field>
+    </record>
+    <menuitem name="面板" id="cs_base_dashboard_menu" action="cs_base_dashboard_action" parent="cs_menu_root" sequence="-1"/>
+
+</odoo>

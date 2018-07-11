@@ -1,6 +1,32 @@
-<?xml version="1.0"?>
-<odoo>
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
 
+        <record id="view_crm_partner_filter" model="ir.ui.view">
+            <field name="name">res.partner.select</field>
+            <field name="model">res.partner</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Partner">
+                   <field name="name" filter_domain="['|','|',('display_name','ilike',self),('ref','=',self),('email','ilike',self)]"/>
+                   <filter name="filter_my_partners" help="我的客户" domain="[('user_id','=',uid)]"/>
+                   <filter name="filter_public_partners" help="公海" domain="[('user_id','=',False)]"/>
+                   <separator/>
+                   <filter string="个人" name="type_person" domain="[('is_company','=',0)]"/>
+                   <filter string="公司" name="type_company" domain="[('is_company','=',1)]"/>
+                   <separator/>
+                   <filter string="已归档" name="inactive" domain="[('active','=',False)]"/>
+                   <separator/>
+                   <field name="category_id" string="标签" filter_domain="[('category_id','ilike', self)]"/>
+                   <field name="parent_id" domain="[('is_company','=',1)]" operator="child_of"/>
+
+                   <group expand="0" name="group_by" string="Group By">
+                       <filter name="group_company" string="Company" context="{'group_by': 'parent_id'}"/>
+                   </group>
+
+               </search>
+            </field>
+        </record>
         <record id="crm_partner_view_form" model="ir.ui.view">
             <field name="name">crm.partner.view_form</field>
             <field name="model">res.partner</field>
@@ -48,11 +74,10 @@
                         </page>
                     </notebook>
                 </sheet>
+            
                 </form>
             </field>
         </record>
-
-
         <record id="crm_partner_view_tree" model="ir.ui.view">
             <field name="name">srm.mro.category.view_tree</field>
             <field name="model">res.partner</field>
@@ -62,66 +87,31 @@
                     <field name="display_name" string="Name"/>
                     <field name="phone"/>
                     <field name="mobile" widget="phone"/>
-                    <button
-                        type="object"
-                        name="go_send_sms"
-                        class="btn-xs btn-link mb4 fa fa-envelope-o"
-                        attrs="{'invisible':[('mobile', '=', False)]}"
-                        context="{'field_name': 'mobile'}"
-                        string=" 发送短信"
-                        ></button>
+                    <button type="object" name="go_send_sms" class="btn-xs btn-link mb4 fa fa-envelope-o" attrs="{'invisible':[('mobile', '=', False)]}" context="{'field_name': 'mobile'}" string=" 发送短信"/>
                     <field name="email"/>
-                    <field name="parent_id" />
+                    <field name="parent_id"/>
                     <field name="active" invisible="1"/>
                 </tree>
             </field>
         </record>
-
-
-       <record id="view_crm_partner_filter" model="ir.ui.view">
-            <field name="name">res.partner.select</field>
-            <field name="model">res.partner</field>
-            <field name="arch" type="xml">
-                <search string="Search Partner">
-                   <field name="name"
-                       filter_domain="['|','|',('display_name','ilike',self),('ref','=',self),('email','ilike',self)]"/>
-                   <filter name="filter_my_partners" help="我的客户"
-                           domain="[('user_id','=',uid)]"/>
-                   <filter name="filter_public_partners" help="公海" domain="[('user_id','=',False)]"/>
-                   <separator/>
-                   <filter string="个人" name="type_person" domain="[('is_company','=',0)]"/>
-                   <filter string="公司" name="type_company" domain="[('is_company','=',1)]"/>
-                   <separator/>
-                   <filter string="已归档" name="inactive" domain="[('active','=',False)]"/>
-                   <separator/>
-                   <field name="category_id" string="标签" filter_domain="[('category_id','ilike', self)]"/>
-                   <field name="parent_id" domain="[('is_company','=',1)]" operator="child_of"/>
-
-                   <group expand="0" name="group_by" string="Group By">
-                       <filter name="group_company" string="Company" context="{'group_by': 'parent_id'}"/>
-                   </group>
-
-               </search>
-            </field>
-        </record>
-
         <record id="action_crm_partner" model="ir.actions.act_window">
             <field name="name">客户</field>
-            <field name="type">ir.actions.act_window</field>
             <field name="res_model">res.partner</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,kanban,form</field>
+            <field name="target">current</field>
             <field name="context">{"search_default_filter_my_partners":1}</field>
             <field name="domain">[('customer','=',1),'|',('user_id','=',uid),('user_id','=',False)]</field>
-            <field name="search_view_id" ref="view_crm_partner_filter"/>
-            <field name="view_ids" eval="[(5, 0, 0),
-                (0, 0, {'view_mode': 'tree', 'view_id': ref('crm_partner_view_tree')}),
-                (0, 0, {'view_mode': 'form', 'view_id': ref('crm_partner_view_form')})]"/>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                        
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('crm_partner_view_tree')}),
+                        
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('crm_partner_view_form')}),
+                        
+                    ]"/>
         </record>
+        <menuitem action="action_crm_partner" id="res_partner_menu_crm" name="客户" parent="cs_menu_root" sequence="2" web_icon="fa fa-address-book"/>
 
-        <menuitem id="res_partner_menu_crm"
-            parent="cs_menu_root"
-            action="action_crm_partner"
-            sequence="2"/>
-
-</odoo>
+    </data>
+</openerp>

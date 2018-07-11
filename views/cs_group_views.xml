@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="cs_group_view_tree_319" model="ir.ui.view">
+            <field name="name">cs.group.view_tree</field>
+            <field name="model">cs.group</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="客服组">
+            <field name="name"/>
+            <field name="state"/>
+            <field name="agent_ids" widget="many2many_tags"/>
+</tree>
+            </field>
+        </record>
+        <record id="cs_group_view_form_320" model="ir.ui.view">
+            <field name="name">cs.group.view_form</field>
+            <field name="model">cs.group</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="客服组" version="7.0">
+  <sheet>
+    <group>
+            <field name="name"/>
+            <field name="state"/>
+            <field name="agent_ids" readonly="1"/>
+    </group>
+  </sheet>
+</form>
+            </field>
+        </record>
+        <record id="cs_group_action_117" model="ir.actions.act_window">
+            <field name="name">客服组配置</field>
+            <field name="res_model">cs.group</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+        <menuitem action="cs_group_action_117" id="cs_group_menuitem_90" name="客服组配置" parent="cs_config_menu" sequence="10"/>
+
+    </data>
+</openerp>

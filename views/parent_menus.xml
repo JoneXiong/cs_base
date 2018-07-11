@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem id="cs_menu_root" name="呼叫中心" parent=""  sequence="0" web_icon="crm,static/description/icon.png"/>
+        <menuitem id="cs_config_menu" name="配置" parent="cs_menu_root"  sequence="25" web_icon="fa fa-gear"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="cs_agent_view_tree_321" model="ir.ui.view">
+            <field name="name">cs.agent.view_tree</field>
+            <field name="model">cs.agent</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="客服坐席">
+            <field name="no"/>
+            <field name="user_id"/>
+            <field name="group_ids" widget="many2many_tags"/>
+            <field name="enable_incoming"/>
+            <field name="is_call_agent"/>
+            <field name="mode"/>
+            <field name="remark"/>
+            <field name="tel_number"/>
+
+</tree>
+            </field>
+        </record>
+        <record id="cs_agent_view_form_322" model="ir.ui.view">
+            <field name="name">cs.agent.view_form</field>
+            <field name="model">cs.agent</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="客服坐席" version="7.0">
+  <sheet>
+    <group>
+            <field name="no"/>
+            <field name="user_id"/>
+            <field name="group_ids" widget="many2many_tags"/>
+
+            <field name="enable_incoming"/>
+            <field name="is_call_agent"/>
+            <field name="mode"/>
+            <field name="remark"/>
+            
+            <field name="corp_key"/>
+            <field name="sip_key"/>
+            <field name="sip_token"/>
+            <field name="tel_number"/>
+
+    </group>
+  </sheet>
+</form>
+            </field>
+        </record>
+        <record id="cs_agent_action_116" model="ir.actions.act_window">
+            <field name="name">坐席</field>
+            <field name="res_model">cs.agent</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+        <menuitem action="cs_agent_action_116" id="cs_agent_menuitem_89" name="坐席配置" parent="cs_config_menu" sequence="10"/>
+
+    </data>
+</openerp>

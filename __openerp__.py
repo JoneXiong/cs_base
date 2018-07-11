@@ -10,8 +10,12 @@
     'website': 'http://www.oejia.cn/',
     'depends': ['web'],
     'data': [
-        'views/base_views.xml',
+        'views/assets.xml',
+        'views/parent_menus.xml',
+        'views/dashboard.xml',
         'views/res_partner_views.xml',
+        'views/cs_group_views.xml',
+        'views/cs_agent_views.xml',
     ],
     'qweb': ['static/src/xml/*.xml'],
     'application': True,
