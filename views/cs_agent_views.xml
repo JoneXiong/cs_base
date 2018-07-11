@@ -11,11 +11,7 @@
             <field name="no"/>
             <field name="user_id"/>
             <field name="group_ids" widget="many2many_tags"/>
-            <field name="enable_incoming"/>
-            <field name="is_call_agent"/>
-            <field name="mode"/>
             <field name="remark"/>
-            <field name="tel_number"/>
 
 </tree>
             </field>
@@ -31,16 +27,7 @@
             <field name="no"/>
             <field name="user_id"/>
             <field name="group_ids" widget="many2many_tags"/>
-
-            <field name="enable_incoming"/>
-            <field name="is_call_agent"/>
-            <field name="mode"/>
             <field name="remark"/>
-            
-            <field name="corp_key"/>
-            <field name="sip_key"/>
-            <field name="sip_token"/>
-            <field name="tel_number"/>
 
     </group>
   </sheet>
