@@ -4,6 +4,9 @@
 
         <menuitem id="cs_menu_root" name="呼叫中心" parent=""  sequence="0" web_icon="crm,static/description/icon.png"/>
         <menuitem id="cs_config_menu" name="配置" parent="cs_menu_root"  sequence="25" web_icon="fa fa-gear" groups="cs_base.group_cs_config"/>
+        <menuitem id="parent_menu_209" name="聊天设置" parent="cs_config_menu"  sequence="10"/>
+        <menuitem id="parent_menu_212" name="统计报表" parent="cs_menu_root"  sequence="24"/>
+        <menuitem id="parent_menu_213" name="聊天统计" parent="parent_menu_212"  sequence="10"/>
 
     </data>
 </openerp>
