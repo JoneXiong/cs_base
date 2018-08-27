@@ -8,7 +8,7 @@
     'description': """""",
     'author': 'Oejia',
     'website': 'http://www.oejia.cn/',
-    'depends': ['web','mail'],
+    'depends': ['web', 'im_livechat'],
     'data': [
         'views/assets.xml',
         'views/parent_menus.xml',
