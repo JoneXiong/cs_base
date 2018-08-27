@@ -14,6 +14,19 @@ var _t = core._t;
 var Dashboard = Widget.extend({
 	template: 'CsBaseDashboard',
 
+    events: {
+        'click .refresh-act': 'on_refresh',
+    },
+
+    on_refresh: function(){
+        this.load(this.all_dashboards);
+        //odoo.__DEBUG__.services['web.web_client'].action_manager.get_inner_action().widget.start();
+        //var ctrl = odoo.__DEBUG__.services['web.web_client'].action_manager.get_inner_action().widget.active_view.controller;
+        //ctrl.do_show();
+        //var ctrl = odoo.__DEBUG__.services['web.web_client'];
+        //ctrl.do_show();
+    },
+
     init: function(parent, data){
         this.all_dashboards = ['agent'];
         return this._super.apply(this, arguments);

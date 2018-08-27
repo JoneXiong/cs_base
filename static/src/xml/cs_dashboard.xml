@@ -7,7 +7,7 @@
                     <h5>欢迎使用！</h5>
                 </div>
                 <div class="col-sm-6">
-                    <a href="#" class="btn btn-sm btn-default pull-right"><i class="fa fa-refresh"></i> 刷新</a>
+                    <a href="#" class="btn btn-sm btn-default pull-right refresh-act"><i class="fa fa-refresh"></i> 刷新</a>
                 </div>
             </div>
             <div class="row o_cs_base_dashboard_agent">
