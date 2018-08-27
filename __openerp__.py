@@ -10,6 +10,9 @@
     'website': 'http://www.oejia.cn/',
     'depends': ['web', 'im_livechat'],
     'data': [
+        'security/res_groups.xml',
+        'security/ir.model.access.csv',
+
         'views/assets.xml',
         'views/parent_menus.xml',
         'views/dashboard.xml',
