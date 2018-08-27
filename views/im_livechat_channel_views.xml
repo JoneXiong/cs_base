@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem action="im_livechat.im_livechat_channel_action" id="im_livechat_channel_menuitem_210" name="渠道设置" parent="parent_menu_209" sequence="10"/>
+
+    </data>
+</openerp>

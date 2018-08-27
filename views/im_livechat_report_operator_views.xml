@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem action="im_livechat.im_livechat_report_operator_action" id="im_livechat_report_operator_menuitem_216" name="操作者分析" parent="parent_menu_213" sequence="3"/>
+
+    </data>
+</openerp>
