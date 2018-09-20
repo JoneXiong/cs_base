@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem action="im_livechat.rating_rating_action_livechat_report" id="rating_rating_menuitem_217" name="客户点评" parent="parent_menu_213" sequence="4"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem action="im_livechat.mail_channel_action" id="mail_channel_menuitem_214" name="会话历史" parent="parent_menu_213" sequence="1"/>
+
+    </data>
+</openerp>

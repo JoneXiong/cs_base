@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--隐藏"在线聊天"菜单-->
+        <record id="im_livechat.menu_livechat_root" model="ir.ui.menu">
+            <field name="name">在线聊天</field>
+            <field name="inherit_id" ref="im_livechat.menu_livechat_root"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+        </record>
+
+    </data>
+</odoo>
+

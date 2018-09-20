@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem action="im_livechat.im_livechat_canned_response_action" id="mail_shortcode_menuitem_211" name="快捷回复设置" parent="parent_menu_209" sequence="10"/>
+
+    </data>
+</openerp>

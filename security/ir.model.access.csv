@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_cs_group_group_cs_config,cs_group.group_cs_config,model_cs_group,group_cs_config,1,1,1,1
+access_cs_group_group_cs_agent,cs_group.group_cs_agent,model_cs_group,group_cs_agent,1,0,0,0
+access_cs_agent_group_cs_config,cs_agent.group_cs_config,model_cs_agent,group_cs_config,1,1,1,1
+access_cs_agent_group_cs_agent,cs_agent.group_cs_agent,model_cs_agent,group_cs_agent,1,0,0,0
