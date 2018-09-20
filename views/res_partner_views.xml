@@ -92,7 +92,6 @@
                     <field name="display_name" string="Name"/>
                     <field name="phone"/>
                     <field name="mobile" widget="phone"/>
-                    <button type="object" name="go_send_sms" class="btn-xs btn-link mb4 fa fa-envelope-o" attrs="{'invisible':[('mobile', '=', False)]}" context="{'field_name': 'mobile'}" string=" 发送短信"/>
                     <field name="email"/>
                     <field name="parent_id"/>
                     <field name="active" invisible="1"/>
