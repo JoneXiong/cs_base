@@ -20,9 +20,7 @@ class LivechatChannel(models.Model):
     def get_mail_channel(self, livechat_channel_id, anonymous_name):
         channel = self.sudo().browse(livechat_channel_id)
         if channel.group_ids:
-            agents = []
-            for group in channel.group_ids:
-                agents += group.agent_ids
+            agents = channel.group_ids.get_available_agents()
             users = [agent.user_id for agent in agents]
         else:
             users = self.sudo().browse(livechat_channel_id).get_available_users()
@@ -31,6 +29,9 @@ class LivechatChannel(models.Model):
             return False
         # choose the res.users operator and get its partner id
         user = random.choice(users)
+        return self._create_mail_channel(user, livechat_channel_id, anonymous_name)
+
+    def _create_mail_channel(self, user, livechat_channel_id, anonymous_name):
         operator_partner_id = user.partner_id.id
         # partner to add to the mail.channel
         channel_partner_to_add = [(4, operator_partner_id)]
