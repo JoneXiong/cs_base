@@ -1,10 +1,10 @@
 # coding=utf-8
 
 {
-    'name': 'CS Base',
+    'name': 'CS',
     'version': '0.1',
     'category': 'Social Network',
-    'summary': '客服系统基础模块',
+    'summary': '客服系统基础实现,客服组、坐席、Web聊天接入',
     'description': """""",
     'author': 'Oejia',
     'website': 'http://www.oejia.cn/',
