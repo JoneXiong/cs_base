@@ -74,6 +74,11 @@
                         </page>
                     </notebook>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
             
                 </form>
             </field>
@@ -100,6 +105,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,kanban,form</field>
             <field name="target">current</field>
+            <field name="search_view_id" ref="cs_base.view_crm_partner_filter"/>
             <field name="context">{"search_default_filter_my_partners":1}</field>
             <field name="domain">[('customer','=',1),'|',('user_id','=',uid),('user_id','=',False)]</field>
             <field name="view_ids"
