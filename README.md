@@ -24,5 +24,6 @@ cs_base 是在强大的 Odoo 框架的基础上实现的一个在线客服应用
 ![面板](http://oejia.net/files/201809/20200556639.jpeg)
 
 升级扩展效果
+
 ![面板](http://oejia.net/files/201811/23164123816.jpeg)
 
