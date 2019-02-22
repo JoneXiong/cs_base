@@ -28,10 +28,13 @@ class LivechatChannel(models.Model):
         if len(users) == 0:
             return False
         # choose the res.users operator and get its partner id
-        user = random.choice(users)
+        user = self.choose_cs(users)
         return self._create_mail_channel(user, livechat_channel_id, anonymous_name)
 
     def _create_mail_channel(self, user, livechat_channel_id, anonymous_name):
+        """
+        CS定制化(开启了导航时直接调用此函数)
+        """
         operator_partner_id = user.partner_id.id
         # partner to add to the mail.channel
         channel_partner_to_add = [(4, operator_partner_id)]
@@ -48,3 +51,7 @@ class LivechatChannel(models.Model):
             'email_send': False,
         })
         return mail_channel.sudo().with_context(im_livechat_operator_partner_id=operator_partner_id).channel_info()[0]
+
+    def choose_cs(self, users):
+        user = random.choice(users)
+        return user
