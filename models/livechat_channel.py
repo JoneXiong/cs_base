@@ -15,16 +15,18 @@ class LivechatChannel(models.Model):
 
     group_ids = fields.Many2many('cs.group', string=u'客服组')
 
-
-    @api.model
-    def get_mail_channel(self, livechat_channel_id, anonymous_name):
+    def get_users(self, livechat_channel_id):
         channel = self.sudo().browse(livechat_channel_id)
         if channel.group_ids:
             agents = channel.group_ids.get_available_agents()
             users = [agent.user_id for agent in agents]
         else:
             users = self.sudo().browse(livechat_channel_id).get_available_users()
+        return users
 
+    @api.model
+    def get_mail_channel(self, livechat_channel_id, anonymous_name):
+        users = self.get_users(livechat_channel_id)
         if len(users) == 0:
             return False
         # choose the res.users operator and get its partner id
@@ -55,3 +57,7 @@ class LivechatChannel(models.Model):
     def choose_cs(self, users):
         user = random.choice(users)
         return user
+
+    def replace_uuid_cs(self, uuid, user):
+        mail_channel = self.env["mail.channel"].sudo().search([('uuid', '=', uuid)], limit=1)
+        mail_channel.write({'channel_partner_ids': [(6,0,[user.partner_id.id])]})
