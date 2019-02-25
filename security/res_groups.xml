@@ -12,7 +12,7 @@
         <field name="name">坐席</field>
         <field name="category_id" ref="cs_base.module_cate62"/>
         <field name="users" eval="[
-			(4, ref('base.user_root')),
+			(4, ref('base.user_admin')),
 		]"/>
     </record>
 	
@@ -20,7 +20,7 @@
         <field name="name">配置管理</field>
         <field name="category_id" ref="cs_base.module_cate62"/>
         <field name="users" eval="[
-			(4, ref('base.user_root')),
+			(4, ref('base.user_admin')),
 		]"/>
     </record>
 	

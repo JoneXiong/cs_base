@@ -3,15 +3,14 @@ odoo.define('cs_base.BaseDashboard', function (require) {
 
 var core = require('web.core');
 var framework = require('web.framework');
-var PlannerCommon = require('web.planner.common');
-var PlannerDialog = PlannerCommon.PlannerDialog;
 var Widget = require('web.Widget'); 
 var session = require('web.session');
+var AbstractAction = require('web.AbstractAction');
 
 var QWeb = core.qweb;          
 var _t = core._t;
 
-var Dashboard = Widget.extend({
+var Dashboard = AbstractAction.extend({
 	template: 'CsBaseDashboard',
 
     events: {
