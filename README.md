@@ -7,7 +7,7 @@ cs_base 是在强大的 Odoo 框架的基础上实现的一个在线客服应用
 
 ## 使用
 1. 安装部署好Odoo环境
-2. 下载cs_base,将其放入Odoo模块目录，安装cs_base模块
+2. 下载适当分支的cs_base（master分支对应odoo11）,将其放入Odoo模块目录，安装cs_base模块
 3. 配置坐席组及坐席人员
 4. 配置web在线客服渠道url到网站
 5. 与网站访客聊天互动
