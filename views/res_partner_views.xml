@@ -105,9 +105,8 @@
             <field name="view_mode">tree,kanban,form</field>
             <field name="target">current</field>
             <field name="search_view_id" ref="cs_base.view_crm_partner_filter"/>
-            <field name="context">{"search_default_filter_my_partners":1, "default_user_id":uid}</field>
+            <field name="context">{"search_default_filter_my_partners":1}</field>
             <field name="domain">[('customer','=',1),'|',('user_id','=',uid),('user_id','=',False)]</field>
-            <field name="help"><p class="oe_view_nocontent_create">点击这儿添加新单据</p></field>
             <field name="view_ids"
                    eval="[(5, 0, 0),
                           (0, 0, {'view_mode': 'tree', 'view_id': ref('crm_partner_view_tree')}),
