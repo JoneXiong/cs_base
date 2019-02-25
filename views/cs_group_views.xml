@@ -31,13 +31,13 @@
             </field>
         </record>
         <record id="cs_group_action_117" model="ir.actions.act_window">
-            <field name="name">客服组配置</field>
+            <field name="name">客服组</field>
             <field name="res_model">cs.group</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
         </record>
-        <menuitem action="cs_group_action_117" id="cs_group_menuitem_90" name="客服组配置" parent="cs_config_menu" sequence="10"/>
+        <menuitem action="cs_group_action_117" id="cs_group_menuitem_90" name="客服组" parent="cs_config_menu" sequence="10"/>
 
     </data>
 </openerp>

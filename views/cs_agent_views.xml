@@ -41,7 +41,7 @@
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
         </record>
-        <menuitem action="cs_agent_action_116" id="cs_agent_menuitem_89" name="坐席配置" parent="cs_config_menu" sequence="10"/>
+        <menuitem action="cs_agent_action_116" id="cs_agent_menuitem_89" name="坐席" parent="cs_config_menu" sequence="10"/>
 
     </data>
 </openerp>
