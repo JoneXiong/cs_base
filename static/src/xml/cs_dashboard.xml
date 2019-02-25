@@ -25,7 +25,7 @@
                     <div style="">
                         <div class="">
                             <b>当前坐席</b>：<t t-esc="widget.data.no"></t>
-                            <span class="pull-right"><i class="fa fa-phone"></i> <t t-esc="widget.data.mobile"></t></span>
+                            <span class="pull-right"><i class="fa fa-phone"></i> <t t-esc="widget.data.mobile or '未设置'"></t></span>
                             <!--<hr style="margin-top: 5px; margin-bottom: 5px;"/>-->
                         </div>
                     </div>
