@@ -30,3 +30,7 @@ http://oejia.net/search?type=tag&value=客服系统&start=1&limit=5
 
 ![面板](http://oejia.net/files/201811/23164123816.jpeg)
 
+
+## 交流&讨论
+
+Odoo CRM客服系统讨论群：711175153
